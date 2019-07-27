@@ -1,0 +1,15 @@
+<!-- templates/home.html -->
+{% extends 'base.html' %}
+
+{% block title %}Anasayfa{% endblock %}
+
+{% block content %}
+{% if user.is_authenticated %}
+  Merhaba {{ request.user.first_name }}!
+  <p><a href="{% url 'logout' %}">Çıkış</a></p>
+  <p><a href="{% url 'password_reset' %}">Parolamı sıfırla</a></p>
+{% else %}
+  <p>Giriş yapmadınız.</p>
+  <a href="{% url 'login' %}">Giriş</a>
+{% endif %}
+{% endblock %}
