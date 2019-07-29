@@ -1,15 +1,15 @@
 <!-- templates/home.html -->
 {% extends 'base.html' %}
 
-{% block title %}Home{% endblock %}
+{% block title %}Anasayfa{% endblock %}
 
 {% block content %}
 {% if user.is_authenticated %}
-  Hi {{ user.username }}!
-  <p><a href="{% url 'logout' %}">logout</a></p>
-  <p><a href="{% url 'password_reset' %}">reset password</a></p>
+  Merhaba {{ user.username }}!
+  <p><a href="{% url 'logout' %}">Çıkış.</a></p>
+  <p><a href="{% url 'password_reset' %}">Parola sıfırla.</a></p>
 {% else %}
-  <p>You are not logged in</p>
-  <a href="{% url 'login' %}">login</a>
+  <p>Giriş yapmadınız.</p>
+  <a href="{% url 'login' %}">Giriş.</a>
 {% endif %}
 {% endblock %}
